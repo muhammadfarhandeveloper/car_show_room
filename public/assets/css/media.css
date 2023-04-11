@@ -1,0 +1,28 @@
+.d-block-800{
+    display: none;
+}
+.d-block-950{
+    display: none;
+}
+@media screen and (max-width: 980px) {
+    .d-none-950{
+        display: none !important;
+    }
+    .d-block-950{
+        display: block;
+    }
+}
+@media screen and (max-width: 800px) {
+    .d-none-800{
+        display: none !important;
+    }
+    .d-block-800{
+        display: block;
+    }
+}
+@media screen and (max-width: 750px) {
+    .card-img-top{
+  padding-right: 50px !important;
+  padding-left: 50px !important;
+    }
+}
