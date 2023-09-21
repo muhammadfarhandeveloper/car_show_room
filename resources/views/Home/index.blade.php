@@ -1,7 +1,7 @@
 @extends('layout.homelayout')
 
 @section('content')
-    
+
  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -123,7 +123,7 @@
       <div class="row mx-auto">
         <div class="col-md-2">
           <div class="card p-2 my-2 text-center border-0">
-            <img src="./images/renault-logo.jpg" style="width: 100%; height: 100px;" class="card-img-top img-fluid"
+            <img src="{{url('/public/images/renault-logo.jpg')}}" style="width: 100%; height: 100px;" class="card-img-top img-fluid"
               alt="">
             <div class="card-body">
               <h5 class="card-tittle clr-grey text-center">RENAULT</h5>
@@ -132,7 +132,7 @@
         </div>
         <div class="col-md-2">
           <div class="card p-2 my-2 text-center border-0">
-            <img src="./images/nissan-6.svg" style="width: 100%; height: 100px;" class="card-img-top img-fluid" alt="">
+            <img src="{{url('/public/images/nissan-6.svg')}}" style="width: 100%; height: 100px;" class="card-img-top img-fluid" alt="">
             <div class="card-body">
               <h5 class="card-tittle clr-grey text-center">NISSAN</h5>
             </div>
@@ -140,7 +140,7 @@
         </div>
         <div class="col-md-2">
           <div class="card p-2 my-2 text-center border-0">
-            <img src="./images/mercedes-logo.png" style="width: 100%; height: 100px;" class="card-img-top img-fluid"
+            <img src="{{url('/public/images/mercedes-logo.png')}}" style="width: 100%; height: 100px;" class="card-img-top img-fluid"
               alt="">
             <div class="card-body">
               <h5 class="card-tittle clr-grey text-center">MERCEDES</h5>
@@ -149,7 +149,7 @@
         </div>
         <div class="col-md-2">
           <div class="card p-2 my-2 text-center border-0">
-            <img src="./images/toyota-logo.jpg" style="width: 100%; height: 100px;" class="card-img-top img-fluid"
+            <img src="{{url('/public/images/toyota-logo.jpg')}}" style="width: 100%; height: 100px;" class="card-img-top img-fluid"
               alt="">
             <div class="card-body">
               <h5 class="card-tittle clr-grey text-center">JEEP</h5>
@@ -158,7 +158,7 @@
         </div>
         <div class="col-md-2">
           <div class="card p-2 my-2 text-center border-0">
-            <img src="./images/audi-logo.png" style="width: 100%; height: 100px;" class="card-img-top img-fluid" alt="">
+            <img src="{{url('/public/images/audi-logo.png')}}" style="width: 100%; height: 100px;" class="card-img-top img-fluid" alt="">
             <div class="card-body">
               <h5 class="card-tittle clr-grey text-center">AUDI</h5>
             </div>
@@ -166,7 +166,7 @@
         </div>
         <div class="col-md-2">
           <div class="card p-2 my-2 text-center border-0">
-            <img src="./images/mini-logo.png" style="width: 100%; height: 100px;" class="card-img-top img-fluid" alt="">
+            <img src="{{url('/public/images/mini-logo.png')}}" style="width: 100%; height: 100px;" class="card-img-top img-fluid" alt="">
             <div class="card-body">
               <h5 class="card-tittle clr-grey text-center">MNI CAR</h5>
             </div>
@@ -203,14 +203,14 @@
     <br>
     <div class="row justify-content-center clr-grey">
       <!-- Card Start -->
-      
+
       <!-- Card End-->
-      
-        
+
+
       @foreach ($data as $item)
       <div class="col-md-6 my-3">
         <div class="card p-card">
-          <img class="p-img" src="/dimages/{{$item->vehicle_img}}" width="100%" height="300" alt="not-found">
+          <img class="p-img" src="{{url('/public/dimages')}}/{{$item->vehicle_img}}" width="100%" height="300" alt="not-found">
           <div class="card-body">
             <h1 class="card-tittle fw-bolder text-dark">{{$item->vehicle_name}}</h1>
             <span class="fs-5 fw-mbold my-text">{{$item->vehicle_price}}<del class="text-black-50">{{$item->vehicle_old_price}}</del></span>
@@ -254,12 +254,12 @@
         </div>
       </div>
       @endforeach
-      
-      
-      
-      
+
+
+
+
       <!-- Card Start -->
-      
+
       <!-- Card End-->
 
 
@@ -357,7 +357,7 @@
             </svg></a>
         </div>
         <div class="col-md-7 d-none d-lg-block">
-          <img src="./images/appointcar.png" alt="not-found">
+          <img src="{{url('/public/images/appointcar.png')}}" alt="not-found">
         </div>
       </div>
     </div>
@@ -523,7 +523,7 @@
 
       </div>
       <div class="col-md-6 bg-back h-100">
-        <img class="img-fluid" src="./images/bg/blog_01-790x505.jpg" />
+        <img class="img-fluid" src="{{url('/public/images/bg/blog_01-790x505.jpg')}}" />
       </div>
     </div>
   </div>
@@ -546,7 +546,7 @@
         <div class="col-md-4 mt-3">
           <div class="card">
             <div class="d-flex align-items-center justify-content-center w-100 bg-gray">
-              <img src="./images/manger.png" style="width: 200px; height: 200px;" class="card-img-top img-fluid rounded"
+              <img src="{{url('/public/images/manger.png')}}" style="width: 200px; height: 200px;" class="card-img-top img-fluid rounded"
                 alt="not-found">
             </div>
             <div class="card-body">
@@ -559,7 +559,7 @@
         <div class="col-md-4 mt-3">
           <div class="card">
             <div class="d-flex align-items-center justify-content-center w-100 bg-gray">
-              <img src="./images/staff.png" style="width: 200px; height: 200px;" class="card-img-top img-fluid rounded"
+              <img src="{{url('/public/images/staff.png')}}" style="width: 200px; height: 200px;" class="card-img-top img-fluid rounded"
                 alt="not-found">
             </div>
             <div class="card-body">
@@ -572,7 +572,7 @@
         <div class="col-md-4 mt-3">
           <div class="card">
             <div class="d-flex align-items-center justify-content-center w-100 bg-gray">
-              <img src="./images/ceo.png" style="width: 200px; height: 200px;" class="card-img-top img-fluid rounded"
+              <img src="{{url('/public/images/ceo.png')}}" style="width: 200px; height: 200px;" class="card-img-top img-fluid rounded"
                 alt="not-found">
             </div>
             <div class="card-body">

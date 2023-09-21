@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,9 +26,17 @@ Route::get('/brand',[HomeController::class, 'brand']);
 Route::get('/inventory-list',[HomeController::class, 'listinventory']);
 
 
+Route::get('/register',[AuthController::class, 'register'])->name('register');
+Route::post('/registerstore',[AuthController::class, 'registerstore'])->name('registerstore');
+Route::get('/login',[AuthController::class, 'login'])->name('login');
+Route::post('/loginstore',[AuthController::class, 'loginstore'])->name('loginstore');
+Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
 
 
-Route::get('/dashboard',[AdminController::class, 'Dashboard']);
+
+
+
+Route::get('/dashboard',[AdminController::class, 'Dashboard'])->middleware('auth');
 
 Route::get('/dashboard/fuel-list',[AdminController::class, 'fuellist']);
 Route::get('/dashboard/fuel-add',[AdminController::class, 'fueladd']);

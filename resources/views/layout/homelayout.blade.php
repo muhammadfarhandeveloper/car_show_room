@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link href="{{url('./images/mainlogo.jpeg')}}" rel="icon">
-  <link href="{{url('./images/mainlogo.jpeg')}}" rel="apple-touch-icon">
+  <link href="{{url('/public/images/mainlogo.jpeg')}}" rel="icon">
+  <link href="{{url('/public/images/mainlogo.jpeg')}}" rel="apple-touch-icon">
 
-  <link href="{{url('/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{url('/assets/css/style1.css')}}" rel="stylesheet">
-  <link href="{{url('/assets/css/media.css')}}" rel="stylesheet">
-  <link rel="stylesheet" href="{{url('/assets/css/contact.css')}}" rel="stylesheet">
+  <link href="{{url('/public/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url('/public/assets/css/style1.css')}}" rel="stylesheet">
+  <link href="{{url('/public/assets/css/media.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{url('/public/assets/css/contact.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -80,7 +80,7 @@
 
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header bg-dark">
-       <a href="./{{url('/')}}"><img src="./images/mainlogo.jpeg" width="70px" height="70px" class="img-fluid rounded rounded-circle"></a> 
+       <a href="{{url('/')}}"><img src="{{url('/public/images/mainlogo.jpeg')}}" width="70px" height="70px" class="img-fluid rounded rounded-circle"></a>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body bg-dark p-0">
@@ -112,6 +112,7 @@
                       </ul>
                     </li>
                     <li class="nav-item fs-3 my-1"><a href="{{url('/contact-us')}}" class="nav-link text-white">Contact</a></li>
+                    <li class="nav-item fs-3 my-1"><a href="{{url('/dashboard')}}" class="nav-link text-white">Dashboard</a></li>
                     {{-- <li class="nav-item fs-3 my-1"><a href="./login" class="nav-link text-white"><button
                           class="btn btn-sm my-bg text-white">Login/Register</button>
                       </a></li> --}}
@@ -130,7 +131,7 @@
     <div class="container-fluid">
       <div class="row justify-content-between">
         <div>
-        <a href="./{{url('/')}}"><img src="./images/mainlogo.jpeg" width="80px" height="80px" class="img-fluid p-2 rounded rounded-circle"></a> 
+        <a href="{{url('/')}}"><img src="{{url('/public/images/mainlogo.jpeg')}}" width="80px" height="80px" class="img-fluid p-2 rounded rounded-circle"></a>
         </div>
       </div>
 
@@ -158,8 +159,12 @@
               <li><a class="dropdown-item" href="{{url('/brand?brandname=bmw')}}">BMW</a></li>
             </ul>
           </li>
-          
+
           <li class="nav-item"><a href="{{url('/contact-us')}}" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="{{url('/dashboard')}}" class="nav-link">Dashboard</a></li>
+          @if (auth()->user())
+          <li class="nav-item"><a href="{{url('/logout')}}" class="nav-link">Logout</a></li>
+          @endif
         </ul>
       </div>
       <div>
@@ -177,7 +182,7 @@
     </div>
   </nav>
 
-  
+
   @yield('content')
 
   <!-- CLIENT END -->
@@ -185,7 +190,7 @@
   <div class="bg-dark">
     <div class="container bg-dark p-5 text-white">
       <div class="row d-flex justify-content-between align-items-center">
-        <div class="w-auto d-inline-block"><img src="./images/mainlogo.jpeg" width="70px" height="70px" class="img-fluid rounded rounded-circle" alt=""></div>
+        <div class="w-auto d-inline-block"><img src="{{url('/public/images/mainlogo.jpeg')}}" width="70px" height="70px" class="img-fluid rounded rounded-circle" alt=""></div>
         <div class="w-auto d-inline-block">
           <div class="d-flex">
             <div class="social-media">
@@ -217,7 +222,7 @@
               </p>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
       <hr class="text-white">
       <div class="row bg-dark justify-content-center d-flex">
@@ -239,14 +244,14 @@
             <a class="text-white text-decoration-none" href="./{{url('/')}}"><li> Home</li></a>
             <a class="text-white text-decoration-none" href="./{{url('/about-us')}}"><li> About</li></a>
            <a class="text-white text-decoration-none" href="./brand.html"> <li> Product</li></a>
-           <a class="text-white text-decoration-none" href="./{{url('/contact-us')}}"><li> Contact us</li></a> 
-            </ul> 
+           <a class="text-white text-decoration-none" href="./{{url('/contact-us')}}"><li> Contact us</li></a>
+            </ul>
         </div>
         <div class="col-md-3 my-3">
           <h5 class="my-text">SHOP SERVICES</h5>
             <ul class="text-white list-unstyled">
-           <a class="text-white text-decoration-none" href="./cars-home.html"><li> cars</li></a> 
-           <a class="text-white text-decoration-none" href="./bikes-home.html"><li> Bike</li></a> 
+           <a class="text-white text-decoration-none" href="./cars-home.html"><li> cars</li></a>
+           <a class="text-white text-decoration-none" href="./bikes-home.html"><li> Bike</li></a>
            <li> Worker</li>
            <li> Featured Cars</li>
            <li> Best Selling</li>
@@ -259,10 +264,10 @@
       </div>
     </div>
   </div>
-  
+
   <!-- FOOTER END -->
-  <script src="{{url('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  
+  <script src="{{url('/public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
 </body>
 
 </html>

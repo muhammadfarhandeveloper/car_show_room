@@ -14,7 +14,7 @@
                   <button class="btn my-bg text-dark">Get Quote Now</button>
               </div>
               <div class="col-md-6">
-                  <img src="/dimages/{{$data->brands_img}}" class="img-fluid" alt="">
+                  <img src="{{url('/public/dimages/')}}/{{$data->brands_img}}" class="img-fluid" alt="">
               </div>
           </div>
       </div>
@@ -26,7 +26,7 @@
               @foreach ($branddata as $item)
               <div class="col-md-4 my-3">
                 <div class="card p-card">
-                  <img class="p-img" src="/dimages/{{$item->vehicle_img}}" width="100%" height="250" alt="not-found">
+                  <img class="p-img" src="{{url('/public/dimages/')}}/{{$item->vehicle_img}}" width="100%" height="250" alt="not-found">
                   <div class="card-body">
                     <h1 class="card-tittle fw-bolder text-dark">{{$item->vehicle_name}}</h1>
                     <span class="fs-5 fw-mbold my-text">{{$item->vehicle_price}} &nbsp;<del class="text-black-50">{{$item->vehicle_old_price}}</del></span>
@@ -68,11 +68,11 @@
                     {{-- <button class="btn btn-warning text-white fw-bold w-100 mt-4 px-5">Get Quote</button> --}}
                   </div>
                 </div>
-              </div> 
+              </div>
 
               @endforeach
               <!-- Card End-->
-             
+
             </div>
       </div>
   </div>

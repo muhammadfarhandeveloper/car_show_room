@@ -11,31 +11,24 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{url('./images/mainlogo.jpeg')}}" rel="icon">
-  <link href="{{url('./images/mainlogo.jpeg')}}" rel="apple-touch-icon">
+  <link href="{{url('/public/images/mainlogo.jpeg')}}" rel="icon">
+  <link href="{{url('public/images/mainlogo.jpeg')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{{url('/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{url('/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-  <link href="{{url('/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-  <link href="{{url('/assets/vendor/quill/quill.snow.css')}}" rel="stylesheet">
-  <link href="{{url('/assets/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
-  <link href="{{url('/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
-  <link href="{{url('/assets/vendor/simple-datatables/style.css')}}" rel="stylesheet">
+  <link href="{{url('/public/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url('/public/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url('/public/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url('/public/assets/vendor/quill/quill.snow.css')}}" rel="stylesheet">
+  <link href="{{url('/public/assets/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
+  <link href="{{url('/public/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{url('/public/assets/vendor/simple-datatables/style.css')}}" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="{{url('/assets/css/style.css')}}" rel="stylesheet">
+  <link href="{{url('/public/assets/css/style.css')}}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.5.0
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -45,18 +38,11 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="{{url('/')}}" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
+        <img src="{{url('/public/assets/img/logo.png')}}" alt="">
         <span class="d-none d-lg-block">Car Showroom</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
-{{-- 
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar --> --}}
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
@@ -96,7 +82,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="{{route('logout')}}">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -121,7 +107,7 @@
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
-      
+
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-fuel-pump"></i><span>Fuel Type</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -157,7 +143,7 @@
           </li>
         </ul>
       </li>
-     
+
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#modelacc" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Model </span><i class="bi bi-chevron-down ms-auto"></i>
@@ -265,7 +251,7 @@
 
 
     @yield('content')
-    
+
 
   </main><!-- End #main -->
 
@@ -281,14 +267,14 @@
 
   <!-- Vendor JS Files -->
 
-  <script src="{{url('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{url('/assets/vendor/quill/quill.min.js')}}"></script>
-  <script src="{{url('/assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
-  <script src="{{url('/assets/vendor/tinymce/tinymce.min.js')}}"></script>
-  <script src="{{url('/assets/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{url('/public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url('/public/assets/vendor/quill/quill.min.js')}}"></script>
+  <script src="{{url('/public/assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
+  <script src="{{url('/public/assets/vendor/tinymce/tinymce.min.js')}}"></script>
+  <script src="{{url('/public/assets/vendor/php-email-form/validate.js')}}"></script>
 
   <!-- Template Main JS File -->
-  <script src="{{url('/assets/js/main.js')}}"></script>
+  <script src="{{url('/public/assets/js/main.js')}}"></script>
 
 </body>
 

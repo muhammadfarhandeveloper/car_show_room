@@ -8,12 +8,12 @@
                     <div class="col-md-6">
                         <h2 class="text-dark display-5 fw-bold">Contact Us</h2>
                         <p class="text-dark">
-                            <span><a class="text-decoration-none" href="./index.html">Home</a></span>/<samp><a
-                                    class="text-decoration-none" href="./contact.html">contact</a></samp>
+                            <span><a class="text-decoration-none" href="{{url('/')}}">Home</a></span>/<samp><a
+                                    class="text-decoration-none" href="{{url('/contact')}}">contact</a></samp>
                         </p>
                     </div>
                     <div class="col-md-6">
-                        <img src="./images/car-img-min-1.png" class="img-fluid" alt="">
+                        <img src="{{url('/public/images/car-img-min-1.png')}}" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
@@ -68,8 +68,6 @@
                     </div>
                     <div class="col-md-6">
                         <div class="formbold-main-wrapper">
-                            <!-- Author: FormBold Team -->
-                            <!-- Learn More: https://formbold.com -->
                             <div class="formbold-form-wrapper">
                                 <form action="{{url('/contact-us-store')}}" method="POST">
                                   @csrf
@@ -88,7 +86,7 @@
                                         <input type="email" name="email" id="email" placeholder="Enter your email"
                                             class="formbold-form-input" />
                                     </div>
-                                  
+
 
                                     <div class="formbold-mb-5 formbold-pt-3">
                                         <label class="formbold-form-label formbold-form-label-2">

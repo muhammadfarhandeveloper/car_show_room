@@ -17,7 +17,7 @@
                 <label for="inputText" class="col-sm-3 mt-4 col-form-label">Brand Thumbnail</label>
                 <div class="col-sm-9 mt-4">
                   <input type="file"  class="form-control" name="brand_img">
-                  <img src="/dimages/{{$data->brands_img}}" width="60" alt="">
+                  <img src="{{url('/public/dimages')}}/{{$data->brands_img}}" width="60" alt="">
                 </div>
                 <input type="hidden" name="oldimg" value="{{$data->brands_img}}">
 
@@ -33,11 +33,11 @@
                       </svg> &nbsp; Update</button>
                 </div>
             </div>
-    
+
         </form>
     </div>
 </div>
 
 </div>
-    
+
 @endsection

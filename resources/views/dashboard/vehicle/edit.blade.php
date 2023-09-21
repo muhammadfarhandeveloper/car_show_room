@@ -17,7 +17,7 @@
                 <label class="col-sm-3 mt-4 col-form-label">Vehicle Image</label>
                 <div class="col-sm-9 mt-4">
                   <input type="file" class="form-control" name="v_img">
-                  <img src="{{url('/dimages')}}/{{$data->vehicle_img}}" width="60px" alt="">
+                  <img src="{{url('/public/dimages')}}/{{$data->vehicle_img}}" width="60px" alt="">
                   <input type="hidden" name="old_img" value="{{$data->vehicle_img}}">
                 </div>
                 <label  class="col-sm-3 mt-4 col-form-label">Vehicle Transmission</label>
@@ -28,7 +28,7 @@
                     <option value="1">Manual</option>
                     @else
                     <option value="0">Automatic</option>
-                    <option value="1" selected>Manual</option>                      
+                    <option value="1" selected>Manual</option>
                     @endif
 
                   </select>
@@ -62,7 +62,7 @@
                   <select class="form-select" name="v_owner">
                     @if ($data->vehicle_owner == 0)
                     <option value="0" selected>First Owner</option>
-                    <option value="1">Second Owner</option>                      
+                    <option value="1">Second Owner</option>
                     @else
                     <option value="0">First Owner</option>
                     <option value="1" selected>Second Owner</option>
@@ -73,10 +73,10 @@
                 <label  class="col-sm-3 mt-4 col-form-label">Vehicle Use</label>
                 <div class="col-sm-9 mt-4">
                   <select name="v_use" class="form-select" >
-                    
+
                     @if ($data->vehicle_owner == 0)
                     <option value="0" selected>New Vehicle</option>
-                    <option value="1">Old Vehicle</option>                      
+                    <option value="1">Old Vehicle</option>
                     @else
                     <option value="0">New Vehicle</option>
                     <option value="1" selected>Old Vehicle</option>
@@ -108,12 +108,12 @@
                     @endforeach
                   </select>
                 </div>
-               
+
                 <label  class="col-sm-3 mt-4 col-form-label">Vehicle Model</label>
                 <div class="col-sm-9 mt-4">
                   <select name="vmodels" class="form-select" >
-                    @foreach ($vmodels as $item)  
-                    <option value="{{$item->vmodels_id}}" 
+                    @foreach ($vmodels as $item)
+                    <option value="{{$item->vmodels_id}}"
                       @if ($item->vmodels_id == $data->model_id)
                         {{"selected"}}
                       @endif>{{$item->vmodels_name}}</option>
@@ -125,7 +125,7 @@
                 <div class="col-sm-9 mt-4">
                   <select name="fuel_types" class="form-select" >
                     @foreach ($fuel_types as $item)
-                    <option value="{{$item->fuel_type_id}}" 
+                    <option value="{{$item->fuel_type_id}}"
                       @if ($item->fuel_type_id == $data->fuel_type_id)
                           {{"selected"}}
                       @endif>{{$item->fuel_type_name}}</option>
@@ -135,9 +135,9 @@
                 <label  class="col-sm-3 mt-4 col-form-label">Vehicle Color</label>
                 <div class="col-sm-9 mt-4">
                   <select name="colors" class="form-select" >
-                    
-                    @foreach ($colors as $item)                      
-                    <option value="{{$item->color_id}}" 
+
+                    @foreach ($colors as $item)
+                    <option value="{{$item->color_id}}"
                       @if ($item->color_id == $data->color_id)
                           {{"selected"}}
                       @endif>{{$item->color_name}}</option>
@@ -153,13 +153,13 @@
                     </svg> &nbsp; Update</button>
                 </div>
             </div>
-    
+
         </form>
     </div>
 </div>
 
 </div>
-    
+
 <br><br><br><br>
 
 

@@ -11,10 +11,10 @@ class AdminController extends Controller
 {
 
     function Dashboard()
-    {   
-        $bikecount = Db::select('select count(*) as count from vehicles left join vehicle_types on vehicles.vehicle_type_id 
+    {
+        $bikecount = Db::select('select count(*) as count from vehicles left join vehicle_types on vehicles.vehicle_type_id
         = vehicle_types.vehicle_type_id where vehicle_type_name = ?',['bike']);
-        $carcount = Db::select('select count(*) as count from vehicles left join vehicle_types on vehicles.vehicle_type_id 
+        $carcount = Db::select('select count(*) as count from vehicles left join vehicle_types on vehicles.vehicle_type_id
         = vehicle_types.vehicle_type_id where vehicle_type_name = ?',['car']);
 
         return view('dashboard.index',compact('bikecount','carcount'));
@@ -106,7 +106,7 @@ class AdminController extends Controller
         $img = $req['brand_img'];
         $imgname = $img->getClientOriginalName();
         $imgname = Str::random(8) . $imgname;
-        $img->move('dimages', $imgname);
+        $img->move('public/dimages', $imgname);
 
         $result = Db::insert(
             'insert into brands(brands_name,brands_img,brands_desc) values(?,?,?)',
@@ -151,8 +151,8 @@ class AdminController extends Controller
                 $img = $req->brand_img;
                 $imgname = $img->getClientOriginalName();
                 $imgname = Str::random(8) . $imgname;
-                $img->move('dimages', $imgname);
-                unlink('dimages/' . $req->oldimg);
+                $img->move('public/dimages', $imgname);
+                // unlink('dimages/' . $req->oldimg);
             } else {
                 $imgname = $req->oldimg;
             }
@@ -172,7 +172,7 @@ class AdminController extends Controller
 
         if ($data != null) {
 
-            unlink('dimages/' . $data[0]->brands_img);
+            // unlink('dimages/' . $data[0]->brands_img);
             Db::delete('delete from brands where brands_id = ?', [$id]);
             session()->flash('status1', 'Successfully Record Deleted');
 
@@ -184,7 +184,7 @@ class AdminController extends Controller
 
     function modellist()
     {
-        $data = Db::select('select * from vmodels left join brands 
+        $data = Db::select('select * from vmodels left join brands
         on vmodels.brands_id = brands.brands_id');
 
         return view('dashboard.vmodel.index')->with('data', $data);
@@ -228,7 +228,7 @@ class AdminController extends Controller
 
         if ($data != null) {
 
-            Db::update('update vmodels set vmodels_name = ? , brands_id = ? where 
+            Db::update('update vmodels set vmodels_name = ? , brands_id = ? where
             vmodels_id = ? ', [$req->model_name, $req->brand_id, $id]);
             session()->flash('status', 'Successfully Record Updated');
             return redirect('/dashboard/model-list');
@@ -438,8 +438,8 @@ class AdminController extends Controller
     function vehiclelist()
     {
 
-        $data =  Db::select('SELECT * from vehicles LEFT JOIN body_types on vehicles.body_type_id = body_types.body_type_id 
-        left join vmodels on vmodels.vmodels_id = vehicles.model_id LEFT JOIN colors on colors.color_id = vehicles.color_id left join fuel_types on fuel_types.fuel_type_id = vehicles.fuel_type_id left join 
+        $data =  Db::select('SELECT * from vehicles LEFT JOIN body_types on vehicles.body_type_id = body_types.body_type_id
+        left join vmodels on vmodels.vmodels_id = vehicles.model_id LEFT JOIN colors on colors.color_id = vehicles.color_id left join fuel_types on fuel_types.fuel_type_id = vehicles.fuel_type_id left join
         vehicle_types on vehicles.vehicle_type_id = vehicle_types.vehicle_type_id');
 
         return view('dashboard.vehicle.index')->with('data', $data);
@@ -479,11 +479,11 @@ class AdminController extends Controller
         $img = $req['v_img'];
         $imgname = $img->getClientOriginalName();
         $imgname = Str::random(8) . $imgname;
-        $img->move('dimages', $imgname);
+        $img->move('public/dimages', $imgname);
 
         Db::insert('insert into vehicles(vehicle_name,vehicle_img,vehicle_transmission,vehicle_mileage,
         vehicle_short_desc,vehicle_long_desc,vehicle_old_price,vehicle_price,vehicle_engine,vehicle_owner
-        ,vehicle_use,vehicle_type_id,body_type_id,model_id,fuel_type_id,color_id) 
+        ,vehicle_use,vehicle_type_id,body_type_id,model_id,fuel_type_id,color_id)
         values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [
             $req->v_name, $imgname, $req->vt_name, $req->v_mileage, $req->v_short_desc,
             $req->v_long_desc, $req->v_old_price, $req->v_price, $req->v_engine, $req->v_owner, $req->v_use,
@@ -525,10 +525,10 @@ class AdminController extends Controller
                 $img = $req['v_img'];
                 $imgname = $img->getClientOriginalName();
                 $imgname = Str::random(8) . $imgname;
-                $img->move('dimages', $imgname);
-                if ($data->vehicle_img != null) {
-                    unlink('dimages/' . $data->vehicle_img);
-                }
+                $img->move('public/dimages', $imgname);
+                // if ($data->vehicle_img != null) {
+                //     unlink('dimages/' . $data->vehicle_img);
+                // }
             } else {
 
                 $imgname = $req->old_img;
@@ -554,7 +554,7 @@ class AdminController extends Controller
         if ($data != null) {
 
             Db::delete('delete from vehicles where vehicle_id = ?', [$id]);
-            unlink('dimages/' . $data->vehicle_img);
+            // unlink('dimages/' . $data->vehicle_img);
             session()->flash('status1', 'Successfully Record Deleted');
 
             return redirect('/dashboard/vehicle-list');
@@ -566,7 +566,7 @@ class AdminController extends Controller
     }
 
     function contactusers(Request $req)
-    {       
+    {
 
         $data = Db::select('select * from contact');
 

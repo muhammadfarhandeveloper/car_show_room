@@ -47,9 +47,13 @@
                             <tr>
                                 <th scope="row">{{ $item->brands_id }}</th>
                                 <td>{{ $item->brands_name }}</td>
-                                <td><img src="{{ url('/dimages') }}/{{ $item->brands_img }}" width="60px"
+                                <td><img src="{{ url('/public/dimages') }}/{{ $item->brands_img }}" width="80px"
                                         alt="img" /></td>
-                                <td>{{ $item->brands_desc }}</td>
+                                <td>
+                                    <p style="width: 300px;height:70px;overflow:auto;">
+                                        {{ $item->brands_desc }}
+                                    </p>
+                                </td>
                                 <td>
                                     <a href="{{ url('/dashboard/brand-edit') }}/{{ $item->brands_id }}"
                                         class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="18"

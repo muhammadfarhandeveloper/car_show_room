@@ -8,12 +8,12 @@
                     <div class="col-md-6">
                         <h2 class="text-dark display-5 fw-bold">Listing Inventory</h2>
                         <p class="text-white">
-                            <span><a class="text-decoration-none" href="./index.html">Home</a></span>/<samp><a
-                                    class="text-decoration-none" href="./cars-home.html">Cars Home</a></samp>
+                            <span><a class="text-decoration-none" href="{{url('/')}}">Home</a></span>/<samp><a
+                                    class="text-decoration-none" href="{{url('/car-home')}}">Cars Home</a></samp>
                         </p>
                     </div>
                     <div class="col-md-6">
-                        <img src="./images/car-img-min-1.png" class="img-fluid" alt="">
+                        <img src="{{url('/public/images/car-img-min-1.png')}}" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                     <div class="col-md-9">
                       <form action="">
 
-                        <p class="mb-3 text-white align-items-center d-flex">Sort by: &nbsp; 
+                        <p class="mb-3 text-white align-items-center d-flex">Sort by: &nbsp;
                           @if ($search == "")
                           <select
                           class="form-select my-1 w-auto" aria-label="Default select example" name="searching" onchange="this.form.submit()">
@@ -120,7 +120,7 @@
                           <option value="pdesc">High  to low Price</option>
                         </select>
                           @endif
-                          
+
                         @if ($search == "pasc")
                         <select
                         class="form-select my-1 w-auto" aria-label="Default select example" name="searching" onchange="this.form.submit()">
@@ -149,7 +149,7 @@
                                 <div class="row mt-5">
                                     <div class="col-4">
                                         <img class="img-fluid" width="100%" height="300px"
-                                            src="dimages/{{ $item->vehicle_img }}" alt="">
+                                            src="{{url('/public/dimages')}}/{{ $item->vehicle_img }}" alt="">
                                     </div>
                                     <div class="col-8">
                                         <div class="px-1">

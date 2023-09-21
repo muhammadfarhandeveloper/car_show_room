@@ -15,7 +15,7 @@
                         <button class="btn my-bg text-white">Get Quote Now</button>
                     </div>
                     <div class="col-md-6">
-                        <img src="./images/about-car1.jpg" class="img-fluid" alt="">
+                        <img src="{{url('/public/images/about-car1.jpg')}}" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
             <div class="container p-5">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <img src="./images/about-limmo.png" class="img-fluid" alt="">
+                        <img src="{{url('/public/images/about-limmo.png')}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-6">
                         <h1 class="fw-bold my-text">Story About Us</h1>
@@ -55,7 +55,7 @@
                         <button class="btn my-bg text-white">Get Quote Now</button>
                     </div>
                     <div class="col-md-6">
-                        <img src="./images/about-banner-1.png" class="img-fluid" alt="">
+                        <img src="{{url('/public/images/about-banner-1.png')}}" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
@@ -65,28 +65,28 @@
                 <div class="row align-items-center">
                   <div class="col-md-3">
                     <div class="card p-5 m-2 text-center">
-                        <img src="./images/01.svg" class="img-fluid" alt="">
+                        <img src="{{url('/public/images/01.svg')}}" class="img-fluid" alt="">
                         <h3 class="my-texy fw-bold">500+</h3>
                         <p class="text-black">DEALER-REVIEWS</p>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="card p-5 m-2 text-center">
-                        <img src="./images/02.svg" class="img-fluid" alt="">
+                        <img src="{{url('/public/images/02.svg')}}" class="img-fluid" alt="">
                         <h3 class="my-texy fw-bold">299+</h3>
                         <p class="text-black">VERIFIED-DEALERS</p>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="card p-5 m-2 text-center">
-                        <img src="./images/03.svg" class="img-fluid" alt="">
+                        <img src="{{url('/public/images/03.svg')}}" class="img-fluid" alt="">
                         <h3 class="my-texy fw-bold">249+</h3>
                         <p class="text-black">VISITORS-PER-DAY</p>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="card p-5 m-2 text-center">
-                        <img src="./images/04.svg" class="img-fluid" alt="">
+                        <img src="{{url('/public/images/04.svg')}}" class="img-fluid" alt="">
                         <h3 class="my-texy fw-bold">24979+</h3>
                         <p class="text-black">CAR-SOLD</p>
                     </div>
@@ -95,5 +95,5 @@
             </div>
         </div>
     </main>
-   
+
 @endsection
